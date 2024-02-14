@@ -3,7 +3,7 @@ provider "google" {
   region  = "asia-northeast1"
   zone    = "asia-northeast1-a"
 }
-###########################################(kms_key module)#################################################
+#----------------------------------------(kms_key module)----------------------------------------
 module "kms_key" {
   source           = ".././"
   name             = "dev1"
