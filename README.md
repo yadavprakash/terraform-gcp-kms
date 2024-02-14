@@ -89,22 +89,22 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | n/a | `bool` | `true` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `""` | no |
-| <a name="input_google_kms_crypto_key_enabled"></a> [google\_kms\_crypto\_key\_enabled](#input\_google\_kms\_crypto\_key\_enabled) | n/a | `bool` | `true` | no |
-| <a name="input_google_kms_crypto_key_iam_member_enabled"></a> [google\_kms\_crypto\_key\_iam\_member\_enabled](#input\_google\_kms\_crypto\_key\_iam\_member\_enabled) | n/a | `bool` | `true` | no |
-| <a name="input_google_kms_key_ring_enabled"></a> [google\_kms\_key\_ring\_enabled](#input\_google\_kms\_key\_ring\_enabled) | n/a | `bool` | `true` | no |
-| <a name="input_key_algorithm"></a> [key\_algorithm](#input\_key\_algorithm) | n/a | `string` | `"GOOGLE_SYMMETRIC_ENCRYPTION"` | no |
-| <a name="input_key_protection_level"></a> [key\_protection\_level](#input\_key\_protection\_level) | n/a | `string` | `"SOFTWARE"` | no |
-| <a name="input_key_rotation_period"></a> [key\_rotation\_period](#input\_key\_rotation\_period) | n/a | `string` | `"100000s"` | no |
-| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | n/a | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"asia"` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | n/a | `string` | `""` | no |
-| <a name="input_name"></a> [name](#input\_name) | n/a | `string` | `""` | no |
-| <a name="input_purpose"></a> [purpose](#input\_purpose) | n/a | `string` | `"ENCRYPT_DECRYPT"` | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | n/a | `string` | `""` | no |
-| <a name="input_role"></a> [role](#input\_role) | n/a | `string` | `""` | no |
-| <a name="input_service_accounts"></a> [service\_accounts](#input\_service\_accounts) | n/a | `list(string)` | `[]` | no |
+| <a name="input_enabled"></a> [enabled](#input\_enabled) | A boolean flag to enable/disable service-account . | `bool` | `true` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
+| <a name="input_google_kms_crypto_key_enabled"></a> [google\_kms\_crypto\_key\_enabled](#input\_google\_kms\_crypto\_key\_enabled) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
+| <a name="input_google_kms_crypto_key_iam_member_enabled"></a> [google\_kms\_crypto\_key\_iam\_member\_enabled](#input\_google\_kms\_crypto\_key\_iam\_member\_enabled) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
+| <a name="input_google_kms_key_ring_enabled"></a> [google\_kms\_key\_ring\_enabled](#input\_google\_kms\_key\_ring\_enabled) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
+| <a name="input_key_algorithm"></a> [key\_algorithm](#input\_key\_algorithm) | The algorithm to use when creating a version based on this template. See the https://cloud.google.com/kms/docs/reference/rest/v1/CryptoKeyVersionAlgorithm for possible inputs. | `string` | `"GOOGLE_SYMMETRIC_ENCRYPTION"` | no |
+| <a name="input_key_protection_level"></a> [key\_protection\_level](#input\_key\_protection\_level) | The protection level to use when creating a version based on this template. Default value: "SOFTWARE" Possible values: ["SOFTWARE", "HSM"] | `string` | `"SOFTWARE"` | no |
+| <a name="input_key_rotation_period"></a> [key\_rotation\_period](#input\_key\_rotation\_period) | Generate a new key every time this period passes. | `string` | `"100000s"` | no |
+| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
+| <a name="input_location"></a> [location](#input\_location) | Location for the keyring. | `string` | `"asia"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, opsstation | `string` | `"opsstation"` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the resource. Provided by the client when the resource is created. | `string` | `""` | no |
+| <a name="input_purpose"></a> [purpose](#input\_purpose) | The immutable purpose of the CryptoKey. Possible values are ENCRYPT\_DECRYPT, ASYMMETRIC\_SIGN, and ASYMMETRIC\_DECRYPT. | `string` | `"ENCRYPT_DECRYPT"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `""` | no |
+| <a name="input_role"></a> [role](#input\_role) | this role use for permissions | `string` | `""` | no |
+| <a name="input_service_accounts"></a> [service\_accounts](#input\_service\_accounts) | List of comma-separated owners for each key declared in set\_owners\_for. | `list(string)` | `[]` | no |
 
 ## Outputs
 
