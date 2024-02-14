@@ -50,7 +50,7 @@ resource "google_kms_crypto_key" "key_ephemeral" {
   }
 }
 
-#=======(Three different resources help you manage your IAM policy for KMS crypto key.)===========
+#==========(Three different resources help you manage your IAM policy for KMS crypto key.)=============
 resource "google_kms_crypto_key_iam_member" "crypto_key" {
   count         = var.google_kms_crypto_key_iam_member_enabled && var.enabled ? 1 : 0
   crypto_key_id = join("", google_kms_crypto_key.key[*].id)
