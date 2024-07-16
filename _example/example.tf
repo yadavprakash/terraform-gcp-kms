@@ -12,3 +12,5 @@ module "kms_key" {
   service_accounts = ["serviceAccount:985070905024-compute@developer.gserviceaccount.com"]
   role             = "roles/editor"
 }
+
+
