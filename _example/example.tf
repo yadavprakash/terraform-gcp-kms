@@ -13,4 +13,3 @@ module "kms_key" {
   role             = "roles/editor"
 }
 
-
